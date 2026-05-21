@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="Codebarista\RevocationRequestFormValidationFactory" />
+
+        <service id="Codebarista\RevocationButtonController" public="true">
+            <argument id="logger" type="service"/>
+            <argument id="Shopware\Core\System\SystemConfig\SystemConfigService" type="service"/>
+            <argument id="Shopware\Core\Content\Mail\Service\MailService" type="service"/>
+            <argument id="Shopware\Core\Framework\Validation\DataValidator" type="service"/>
+            <argument id="Codebarista\RevocationRequestFormValidationFactory" type="service"/>
+            <argument id="shopware.rate_limiter" type="service"/>
+            <argument id="Shopware\Storefront\Page\GenericPageLoader" type="service"/>
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+    </services>
+</container>

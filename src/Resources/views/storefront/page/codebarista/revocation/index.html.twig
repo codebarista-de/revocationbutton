@@ -1,0 +1,18 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% block base_head_title %}
+    {{ 'codebaristaRevocationRequest.headline'|trans|striptags }} | {{ basicConfig.shopName }}
+{% endblock %}
+
+{% block base_content %}
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <h1 class="mt-2 mb-3">{{ 'codebaristaRevocationRequest.headline'|trans|sw_sanitize }}</h1>
+                <p class="mb-4">{{ 'codebaristaRevocationRequest.intro'|trans|sw_sanitize }}</p>
+
+                {% sw_include '@RevocationButton/storefront/includes/revocationform.html.twig' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

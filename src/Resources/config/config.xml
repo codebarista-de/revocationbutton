@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>Revocation Button Settings</title>
+        <title lang="de-DE">Widerrufsbutton Einstellungen</title>
+
+        <input-field type="text">
+            <name>mailRecipientAddress</name>
+            <label>Merchant notification - inbox address</label>
+            <label lang="de-DE">Händler-Benachrichtigung - Empfänger-E-Mail</label>
+            <placeholder>revocation@example.com</placeholder>
+            <placeholder lang="de-DE">widerruf@example.com</placeholder>
+            <helpText>Inbox that receives the merchant notification when a customer submits the revocation form. Leave empty to fall back to the shop email address (Settings &gt; Basic information).</helpText>
+            <helpText lang="de-DE">Postfach, das bei jedem Widerruf die Händler-Benachrichtigung erhält. Leer lassen, um die Shop-E-Mail-Adresse (Einstellungen &gt; Stammdaten &gt; Shopbetreiber-E-Mail-Adresse) zu verwenden.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>mailRecipientName</name>
+            <label>Merchant notification - inbox display name</label>
+            <label lang="de-DE">Händler-Benachrichtigung - Empfänger-Anzeigename</label>
+            <placeholder>Revocation Officer</placeholder>
+            <placeholder lang="de-DE">Widerrufsstelle</placeholder>
+            <helpText>Display name shown in the To: header of the merchant notification. Leave empty to use the inbox address.</helpText>
+            <helpText lang="de-DE">Anzeigename, der im To:-Header der Händler-Benachrichtigung verwendet wird. Leer lassen, um die Empfängeradresse zu verwenden.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>mailSenderAddress</name>
+            <label>Outgoing mail - From: address</label>
+            <label lang="de-DE">Ausgehende E-Mails - Absender-E-Mail</label>
+            <placeholder>noreply@example.com</placeholder>
+            <placeholder lang="de-DE">noreply@example.com</placeholder>
+            <helpText>From: address used for both outgoing mails - the merchant notification and the confirmation mail to the customer. Leave empty to use the merchant notification inbox address.</helpText>
+            <helpText lang="de-DE">Absenderadresse für beide ausgehende E-Mails - die Händler-Benachrichtigung und die Bestätigungsmail an den Kunden. Leer lassen, um die Empfängeradresse der Händler-Benachrichtigung zu verwenden.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>mailSenderName</name>
+            <label>Outgoing mail - From: display name</label>
+            <label lang="de-DE">Ausgehende E-Mails - Absender-Anzeigename</label>
+            <placeholder>My-Shop</placeholder>
+            <placeholder lang="de-DE">Mein-Shop</placeholder>
+            <helpText>From: display name used for both outgoing mails. Leave empty to use the sales channel name.</helpText>
+            <helpText lang="de-DE">Anzeigename im From:-Header beider ausgehenden E-Mails. Leer lassen, um den Sales-Channel-Namen zu verwenden.</helpText>
+        </input-field>
+    </card>
+</config>

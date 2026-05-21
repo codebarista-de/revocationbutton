@@ -1,0 +1,22 @@
+.cb-revocation-form {
+  .cb-revocation-form-privacy {
+    .form-check-label {
+      text-align: left;
+    }
+  }
+
+  .cb-revocation-form-buttons {
+    button {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  .form-alert:empty {
+    display: none;
+  }
+}
+
+.cb-revocation-footer-link {
+  margin-top: $spacer-sm;
+}

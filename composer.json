@@ -1,0 +1,48 @@
+{
+  "name": "codebarista/revocationbutton",
+  "version": "1.0.0",
+  "description": "Backports the Shopware 6.6/6.7 revocation request form to Shopware 6.4/6.5 so EU shops can comply with the legally mandated revocation button.",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "keywords": ["shopware", "shopware-plugin", "revocation", "withdrawal", "widerruf", "eu", "compliance"],
+  "homepage": "https://github.com/codebarista/revocationbutton",
+  "support": {
+    "issues": "https://github.com/codebarista/revocationbutton/issues",
+    "source": "https://github.com/codebarista/revocationbutton"
+  },
+  "authors": [
+    {
+      "name": "Codebarista",
+      "homepage": "https://codebarista.de/"
+    }
+  ],
+  "require": {
+    "shopware/core": "~6.4.12 || ~6.5.0",
+    "shopware/storefront": "~6.4.12 || ~6.5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Codebarista\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "Codebarista\\RevocationButton",
+    "copyright": "Codebarista",
+    "label": {
+      "de-DE": "Widerrufsbutton",
+      "en-GB": "Revocation Button"
+    },
+    "description": {
+      "de-DE": "Widerrufsbutton und Formular im Storefront.",
+      "en-GB": "Revocation button and form in the storefront."
+    },
+    "manufacturerLink": {
+      "de-DE": "https://codebarista.de/",
+      "en-GB": "https://codebarista.de/"
+    },
+    "supportLink": {
+      "de-DE": "https://github.com/codebarista/revocationbutton/issues",
+      "en-GB": "https://github.com/codebarista/revocationbutton/issues"
+    }
+  }
+}

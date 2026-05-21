@@ -1,0 +1,25 @@
+{
+    "codebaristaRevocationRequest": {
+        "headline": "Revocation",
+        "intro": "Use this form to revoke your contract. We will process your request as soon as possible.",
+        "firstNameLabel": "First name",
+        "firstNamePlaceholder": "Enter first name...",
+        "lastNameLabel": "Last name",
+        "lastNamePlaceholder": "Enter last name...",
+        "emailLabel": "Email address",
+        "emailPlaceholder": "Enter email address...",
+        "contractNumberLabel": "Contract number",
+        "contractNumberPlaceholder": "Enter contract number...",
+        "contractNumberHelp": "Contract number (order number, subscription number, ...)",
+        "commentLabel": "Comment",
+        "commentPlaceholder": "Enter comment...",
+        "privacyNotice": "I have read and understood the <a data-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Privacy Policy\">Privacy Policy</a>.",
+        "requiredFieldsInfo": "Fields marked with * are required.",
+        "formSubmit": "Confirm revocation",
+        "footerLinkText": "Revocation",
+        "successMessage": "We have received your revocation request and will process it as soon as possible.",
+        "errorMessage": "An error occurred while sending your request. Please try again later.",
+        "validationError": "Please check your input.",
+        "rateLimited": "Too many requests. Please try again in a few minutes."
+    }
+}

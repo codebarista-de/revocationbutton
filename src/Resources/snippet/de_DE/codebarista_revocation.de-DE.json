@@ -1,0 +1,25 @@
+{
+    "codebaristaRevocationRequest": {
+        "headline": "Widerruf",
+        "intro": "Mit diesem Formular können Sie Ihren Vertrag widerrufen. Wir bearbeiten Ihren Widerruf schnellstmöglich.",
+        "firstNameLabel": "Vorname",
+        "firstNamePlaceholder": "Vorname eingeben...",
+        "lastNameLabel": "Nachname",
+        "lastNamePlaceholder": "Nachname eingeben...",
+        "emailLabel": "E-Mail-Adresse",
+        "emailPlaceholder": "E-Mail-Adresse eingeben...",
+        "contractNumberLabel": "Vertragsnummer",
+        "contractNumberPlaceholder": "Vertragsnummer eingeben...",
+        "contractNumberHelp": "Vertragsnummer (Bestellnummer, Abonummer, ...)",
+        "commentLabel": "Kommentar",
+        "commentPlaceholder": "Kommentar eingeben...",
+        "privacyNotice": "Ich habe die <a data-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Datenschutzbestimmungen\">Datenschutzbestimmungen</a> zur Kenntnis genommen.",
+        "requiredFieldsInfo": "Mit * markierte Felder sind Pflichtfelder.",
+        "formSubmit": "Widerruf absenden",
+        "footerLinkText": "Widerruf",
+        "successMessage": "Wir haben Ihren Widerruf erhalten und werden diesen schnellstmöglich bearbeiten.",
+        "errorMessage": "Beim Senden Ihrer Anfrage ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+        "validationError": "Bitte prüfen Sie Ihre Eingaben.",
+        "rateLimited": "Zu viele Anfragen. Bitte versuchen Sie es in einigen Minuten erneut."
+    }
+}
