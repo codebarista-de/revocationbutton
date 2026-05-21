@@ -87,19 +87,13 @@
             {% endblock %}
 
             <div class="form-group col-md-12 cb-revocation-form-privacy">
-                <div class="form-check">
-                    <input type="checkbox"
-                           class="form-check-input"
-                           name="privacy"
-                           value="agreed"
-                           id="codebarista-revocation-privacy"
-                           required="required">
-                    <label class="form-check-label" for="codebarista-revocation-privacy">
-                        {{ 'codebaristaRevocationRequest.privacyNotice'|trans({
-                            '%privacyUrl%': path('frontend.cms.page', { id: config('core.basicInformation.privacyPage') })
-                        })|raw }}
-                    </label>
-                </div>
+                <h4>{{ 'general.privacyTitle'|trans|sw_sanitize }}</h4>
+                <p>
+                    {{ 'general.privacyNotice'|trans({
+                        '%privacyUrl%': path('frontend.cms.page', { id: config('core.basicInformation.privacyPage') }),
+                        '%tosUrl%': path('frontend.cms.page', { id: config('core.basicInformation.tosPage') })
+                    })|raw }}
+                </p>
             </div>
 
             <div class="form-group col-md-12 cb-revocation-form-buttons">

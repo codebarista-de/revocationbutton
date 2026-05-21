@@ -13,7 +13,6 @@
         "contractNumberHelp": "Contract number (order number, subscription number, ...)",
         "commentLabel": "Comment",
         "commentPlaceholder": "Enter comment...",
-        "privacyNotice": "I have read and understood the <a data-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Privacy Policy\">Privacy Policy</a>.",
         "requiredFieldsInfo": "Fields marked with * are required.",
         "formSubmit": "Confirm revocation",
         "footerLinkText": "Revocation",

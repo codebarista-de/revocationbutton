@@ -13,7 +13,6 @@
         "contractNumberHelp": "Vertragsnummer (Bestellnummer, Abonummer, ...)",
         "commentLabel": "Kommentar",
         "commentPlaceholder": "Kommentar eingeben...",
-        "privacyNotice": "Ich habe die <a data-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Datenschutzbestimmungen\">Datenschutzbestimmungen</a> zur Kenntnis genommen.",
         "requiredFieldsInfo": "Mit * markierte Felder sind Pflichtfelder.",
         "formSubmit": "Widerruf absenden",
         "footerLinkText": "Widerruf",
