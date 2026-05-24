@@ -1,7 +1,12 @@
 # Revocation Button for Shopware 6.4 / 6.5
 
-A Shopware plugin that adds the legally mandated revocation button to the storefont.
-This basically backports the native Shopware 6.6/6.7 implementation to Shopware 6.4/6.5.
+A Shopware plugin that adds the legally mandated revocation button to the storefront,
+similar to the native Shopware 6.6/6.7 implementation.
+
+## Compatibility
+
+- PHP 7.4+ / 8.x
+- Shopware `~6.4.12 || ~6.5.0`
 
 ## What it does
 
@@ -12,7 +17,19 @@ This basically backports the native Shopware 6.6/6.7 implementation to Shopware 
   - `codebarista_revocation_request.customer` — confirmation to the customer.
   Both can be customised under *Settings → Email templates*.
 
-## Adding the revocation link to the storefront
+## How to use it
+
+> [!IMPORTANT]
+> Always test new plugin versions in a dev environment before using them in a production/live shop.
+
+1. Download the ZIP archive from the latest [release](https://github.com/codebarista-de/revocationbutton/releases).
+2. Log in to the Admin UI of your shop and go to `Extensions > My extensions`.
+3. Click `Upload extension` and select the downloaded ZIP archive.
+4. Find the `Revocation Button` extension in the list.
+5. Install and activate it.
+
+
+### Adding the revocation link to the storefront
 
 The plugin does not auto-inject the link, so you keep full control over
 placement, label and visibility. To add the link the same way imprint and
@@ -23,7 +40,7 @@ privacy are exposed:
 3. **Admin → Sales Channels → (your channel) → Service menu** — add the new category to the service-menu category tree.
 4. Save and clear caches. The link now appears in the footer service menu next to *Imprint* / *Privacy*.
 
-## Configuration
+### Configuration
 
 Configure under *Settings → Plugins → Revocation Button → Configure*.
 All fields are optional — sensible fallbacks apply when left empty.
@@ -34,11 +51,6 @@ All fields are optional — sensible fallbacks apply when left empty.
 | Merchant notification – inbox display name | inbox address | Display name shown in the `To:` header of the merchant notification. |
 | Outgoing mail – From: address | merchant inbox address | `From:` used for **both** outgoing mails (notification + customer confirmation). |
 | Outgoing mail – From: display name | sales channel name | `From:` display name used for **both** outgoing mails. |
-
-## Compatibility
-
-- PHP 7.4+ / 8.x
-- Shopware `~6.4.12 || ~6.5.0`
 
 ## License
 

@@ -1,0 +1,21 @@
+name: Package
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master, main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create Plugin ZIP
+        run: ./create_plugin_zip.sh
+
+      - uses: actions/upload-artifact@v4
+        with:
+          path: codebarista_revocationbutton_*.zip
+          if-no-files-found: error

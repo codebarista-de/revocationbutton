@@ -1,7 +1,7 @@
 {
   "name": "codebarista/revocationbutton",
   "version": "1.0.0",
-  "description": "Backports the Shopware 6.6/6.7 revocation request form to Shopware 6.4/6.5 so EU shops can comply with the legally mandated revocation button.",
+  "description": "Revocation button for Shopware 6.4/6.5.",
   "type": "shopware-platform-plugin",
   "license": "MIT",
   "keywords": ["shopware", "shopware-plugin", "revocation", "withdrawal", "widerruf", "eu", "compliance"],
