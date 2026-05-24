@@ -15,6 +15,7 @@
             <argument id="Codebarista\RevocationRequestFormValidationFactory" type="service"/>
             <argument id="shopware.rate_limiter" type="service"/>
             <argument id="Shopware\Storefront\Page\GenericPageLoader" type="service"/>
+            <argument id="mail_template.repository" type="service"/>
             <call method="setContainer">
                 <argument type="service" id="service_container"/>
             </call>

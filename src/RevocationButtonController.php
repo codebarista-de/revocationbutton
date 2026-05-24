@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Codebarista;
 
-use Doctrine\DBAL\Connection;
 use Psr\Log\LoggerInterface;
 use Shopware\Core\Content\Mail\Service\AbstractMailService;
+use Shopware\Core\Content\MailTemplate\MailTemplateEntity;
+use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
+use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
+use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Shopware\Core\Framework\RateLimiter\Exception\RateLimitExceededException;
 use Shopware\Core\Framework\RateLimiter\RateLimiter;
 use Shopware\Core\Framework\Validation\DataBag\DataBag;
@@ -33,6 +36,7 @@ class RevocationButtonController extends StorefrontController
     private RevocationRequestFormValidationFactory $validationFactory;
     private RateLimiter $rateLimiter;
     private GenericPageLoaderInterface $genericPageLoader;
+    private EntityRepository $mailTemplateRepository;
 
     public function __construct(
         LoggerInterface $logger,
@@ -41,7 +45,8 @@ class RevocationButtonController extends StorefrontController
         DataValidator $dataValidator,
         RevocationRequestFormValidationFactory $validationFactory,
         RateLimiter $rateLimiter,
-        GenericPageLoaderInterface $genericPageLoader
+        GenericPageLoaderInterface $genericPageLoader,
+        EntityRepository $mailTemplateRepository
     ) {
         $this->logger = $logger;
         $this->systemConfig = $systemConfig;
@@ -50,6 +55,7 @@ class RevocationButtonController extends StorefrontController
         $this->validationFactory = $validationFactory;
         $this->rateLimiter = $rateLimiter;
         $this->genericPageLoader = $genericPageLoader;
+        $this->mailTemplateRepository = $mailTemplateRepository;
     }
 
     /**
@@ -197,43 +203,21 @@ class RevocationButtonController extends StorefrontController
      */
     private function loadTemplate(string $technicalName, SalesChannelContext $context): array
     {
-        /** @var Connection */
-        $connection = $this->container->get('Doctrine\\DBAL\\Connection');
+        $criteria = new Criteria();
+        $criteria->addFilter(new EqualsFilter('mailTemplateType.technicalName', $technicalName));
+        $criteria->setLimit(1);
 
-        $row = $connection->fetchAssociative(
-            'SELECT mtt.subject, mtt.content_html, mtt.content_plain
-             FROM mail_template mt
-             INNER JOIN mail_template_type mty ON mty.id = mt.mail_template_type_id
-             INNER JOIN mail_template_translation mtt ON mtt.mail_template_id = mt.id
-             WHERE mty.technical_name = :name
-               AND mtt.language_id = :lang
-             LIMIT 1',
-            [
-                'name' => $technicalName,
-                'lang' => \Shopware\Core\Framework\Uuid\Uuid::fromHexToBytes($context->getContext()->getLanguageId()),
-            ]
-        );
+        /** @var MailTemplateEntity|null $template */
+        $template = $this->mailTemplateRepository->search($criteria, $context->getContext())->first();
 
-        if ($row === false) {
-            $row = $connection->fetchAssociative(
-                'SELECT mtt.subject, mtt.content_html, mtt.content_plain
-                 FROM mail_template mt
-                 INNER JOIN mail_template_type mty ON mty.id = mt.mail_template_type_id
-                 INNER JOIN mail_template_translation mtt ON mtt.mail_template_id = mt.id
-                 WHERE mty.technical_name = :name
-                 LIMIT 1',
-                ['name' => $technicalName]
-            );
-        }
-
-        if ($row === false) {
+        if ($template === null) {
             throw new \RuntimeException(sprintf('Mail template "%s" not found.', $technicalName));
         }
 
         return [
-            'subject' => self::asTrimmedString($row['subject']),
-            'content_html' => self::asTrimmedString($row['content_html']),
-            'content_plain' => self::asTrimmedString($row['content_plain']),
+            'subject' => self::asTrimmedString($template->getSubject()),
+            'content_html' => self::asTrimmedString($template->getContentHtml()),
+            'content_plain' => self::asTrimmedString($template->getContentPlain()),
         ];
     }
 
