@@ -59,7 +59,7 @@ class RevocationButtonController extends StorefrontController
     }
 
     /**
-     * @Route("/codebarista/revocation", name="frontend.codebarista.revocation.page", methods={"GET"})
+     * @Route("/revocation", name="frontend.codebarista.revocation.page", methods={"GET"})
      */
     public function page(Request $request, SalesChannelContext $context): Response
     {
@@ -73,7 +73,7 @@ class RevocationButtonController extends StorefrontController
 
     /**
      * @Route(
-     *     "/codebarista/revocation/request",
+     *     "/revocation/request",
      *     name="frontend.codebarista.revocation.request",
      *     defaults={"XmlHttpRequest"=true, "_captcha"=true},
      *     methods={"POST"}

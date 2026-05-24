@@ -5,7 +5,7 @@ This basically backports the native Shopware 6.6/6.7 implementation to Shopware 
 
 ## What it does
 
-- Exposes a revocation form at `/codebarista/revocation` with the fields:
+- Exposes a revocation form at `/revocation` with the fields:
   first name, last name, email, contract number and comment.
 - Sends two admin-editable mails on submission:
   - `codebarista_revocation_request.merchant` — to the shop operator.
@@ -19,7 +19,7 @@ placement, label and visibility. To add the link the same way imprint and
 privacy are exposed:
 
 1. **Admin → Catalogues → Categories** — create a new category, e.g. "Revocation".
-2. Set **Type = Link**, then pick **External link** and enter the relative URL `/codebarista/revocation`. (Internal link only allows picking existing entities, which is why we use External link with a relative path — Shopware renders it verbatim, no domain needed.)
+2. Set **Type = Link**, then pick **External link** and enter the relative URL `/revocation`. (Internal link only allows picking existing entities, which is why we use External link with a relative path — Shopware renders it verbatim, no domain needed.)
 3. **Admin → Sales Channels → (your channel) → Service menu** — add the new category to the service-menu category tree.
 4. Save and clear caches. The link now appears in the footer service menu next to *Imprint* / *Privacy*.
 
