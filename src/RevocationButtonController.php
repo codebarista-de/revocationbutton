@@ -156,8 +156,8 @@ class RevocationButtonController extends StorefrontController
     }
 
     /**
-     * @param array<string> $recipients 
-     * @param array<string, string> $formData 
+     * @param array<string> $recipients
+     * @param array<string, mixed> $formData
      */
     private function sendMail(
         string $technicalName,
