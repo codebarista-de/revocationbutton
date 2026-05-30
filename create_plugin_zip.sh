@@ -20,4 +20,5 @@ rm -f "$out_file"
  -x "$root_folder/bin*" \
  -x "$root_folder/*.sh" \
  -x "$root_folder/*.zip" \
- -x "$root_folder/*.md")
+ -x "$root_folder/*.md" \
+ -x "$root_folder/*.png")
