@@ -7,7 +7,10 @@
           data-form-csrf-handler="true"
           data-form-ajax-submit="true"
           data-form-ajax-submit-options='{"replaceSelectors": false, "scrollToAlert": true, "resetSubmittedForm": true}'>
-        {{ sw_csrf('frontend.codebarista.revocation.request') }}
+
+        {% if not feature('v6.5.0.0') %}
+            {% sw_include '@Storefront/storefront/includes/revocationform_csrf.html.twig' %}
+        {% endif %}
 
         <div class="form-alert"></div>
 
