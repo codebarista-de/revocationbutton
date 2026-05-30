@@ -17,6 +17,17 @@ similar to the native Shopware 6.6/6.7 implementation.
   - `codebarista_revocation_request.customer` — confirmation to the customer.
   Both can be customised under *Settings → Email templates*.
 
+<table>
+  <tr>
+    <td><img src="storefront_revocation_form_en.png" alt="Revocation form (English)" width="100%"></td>
+    <td><img src="storefront_revocation_form_de.png" alt="Revocation form (German)" width="100%"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Storefront form (English)</sub></td>
+    <td align="center"><sub>Storefront form (German)</sub></td>
+  </tr>
+</table>
+
 ## How to use it
 
 > [!IMPORTANT]
@@ -38,6 +49,25 @@ privacy are exposed:
 1. **Admin → Catalogues → Categories** — create a new category, e.g. "Revocation" in the [service menu category tree](https://docs.shopware.com/en/shopware-6-en/tutorials-and-faq/basic-setup).
 2. Set **Type = Link**, then pick **External link** and enter the relative URL `/revocation` and activate the category.
 3. Save and clear caches. The link now appears in the service menu.
+
+<table>
+  <tr>
+    <td><img src="admin_revocation_category_en.png" alt="Admin category configuration (English)" width="100%"></td>
+    <td><img src="admin_revocation_category_de.png" alt="Admin category configuration (German)" width="100%"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Admin category configuration (English)</sub></td>
+    <td align="center"><sub>Admin category configuration (German)</sub></td>
+  </tr>
+  <tr>
+    <td><img src="storefront_revocation_link_en.png" alt="Revocation link in the storefront (English)" width="100%"></td>
+    <td><img src="storefront_revocation_link_de.png" alt="Revocation link in the storefront (German)" width="100%"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Revocation link (English)</sub></td>
+    <td align="center"><sub>Revocation link (German)</sub></td>
+  </tr>
+</table>
 
 ### Configuration
 
